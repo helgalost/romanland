@@ -166,3 +166,28 @@ function preOrder(bookId) {
   console.log('Предзаказ:', bookId);
   showAlert('Вы оформили предзаказ. Мы уведомим вас о выходе книги.', 'success');
 }
+
+// Переключатель темы
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+if (themeToggle) {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  body.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+  });
+}
+
+function updateThemeIcon(theme) {
+  const icon = document.querySelector('.theme-toggle__icon');
+  if (icon) {
+    icon.textContent = theme === 'light' ? '☀' : '☾';
+  }
+}
