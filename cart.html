@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина — Romanland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo">Romanland</a>
+      <nav class="header__nav">
+        <a href="index.html" class="header__nav-link">Главная</a>
+        <a href="catalog.html" class="header__nav-link">Каталог</a>
+        <a href="about.html" class="header__nav-link">Об авторе</a>
+        <a href="news.html" class="header__nav-link">Новости</a>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+          <span class="theme-toggle__icon">☀</span>
+        </button>
+        <a href="cart.html" class="btn btn-secondary">Корзина</a>
+        <a href="login.html" class="btn btn-primary">Войти</a>
+        <button class="header__mobile-toggle" aria-label="Меню">
+          <span class="header__mobile-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1 class="section__title">Корзина</h1>
+    <div id="cart-content" class="cart-container">
+      <p>Загрузка...</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__block">
+        <h4>Romanland</h4>
+        <p>Литературное пространство романтической литературы</p>
+      </div>
+      <div class="footer__block">
+        <h4>Навигация</h4>
+        <ul class="footer__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">Об авторе</a></li>
+          <li><a href="news.html">Новости</a></li>
+        </ul>
+      </div>
+      <div class="footer__block">
+        <h4>Покупателям</h4>
+        <ul class="footer__list">
+          <li><a href="pages/support.html">Техподдержка</a></li>
+          <li><a href="how-to-buy.html">Как купить</a></li>
+          <li><a href="formats.html">Форматы файлов</a></li>
+          <li><a href="return.html">Возврат</a></li>
+        </ul>
+      </div>
+      <div class="footer__block">
+        <h4>Юридическая информация</h4>
+        <ul class="footer__list">
+          <li><a href="privacy.html">Политика конфиденциальности</a></li>
+          <li><a href="offer.html">Публичная оферта</a></li>
+          <li><a href="terms.html">Условия использования</a></li>
+          <li><a href="details.html">Реквизиты</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; 2026 Romanland. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cartContent = document.getElementById('cart-content');
+      const cart = JSON.parse(localStorage.getItem('romanland_cart') || '[]');
+      
+      if (cart.length === 0) {
+        cartContent.innerHTML = `
+          <div class="cart-empty">
+            <p>Ваша корзина пуста</p>
+            <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+          </div>
+        `;
+        return;
+      }
+
+      let total = 0;
+      let itemsHtml = cart.map((item, index) => {
+        total += item.price;
+        return `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.title}" class="cart-item__image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%22120%22 viewBox=%220 0 80 120%22%3E%3Crect fill=%22%23EFEAE4%22 width=%2280%22 height=%22120%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2212%22 fill=%22%237A3B4A%22%3EОбложка%3C/text%3E%3C/svg%3E'">
+            <div class="cart-item__info">
+              <h3 class="cart-item__title">${item.title}</h3>
+              <p class="cart-item__author">${item.author}</p>
+              <p class="cart-item__price">${item.price} ₽</p>
+            </div>
+            <button class="cart-item__remove" onclick="removeFromCart(${index})">✕</button>
+          </div>
+        `;
+      }).join('');
+
+      cartContent.innerHTML = `
+        <div class="cart-items">${itemsHtml}</div>
+        <div class="cart-summary">
+          <p class="cart-summary__total">Итого: <strong>${total} ₽</strong></p>
+          <button class="btn btn-primary btn--full" onclick="alert('Оплата будет доступна после подключения платежной системы')">Оформить заказ</button>
+        </div>
+      `;
+    });
+
+    function removeFromCart(index) {
+      const cart = JSON.parse(localStorage.getItem('romanland_cart') || '[]');
+      cart.splice(index, 1);
+      localStorage.setItem('romanland_cart', JSON.stringify(cart));
+      location.reload();
+    }
+  </script>
+</body>
+</html>

@@ -76,7 +76,7 @@
         
         <div class="section__grid">
           <!-- Карточка книги 1 -->
-          <article class="book-card" onclick="window.location.href='pages/book-detail.html'" style="cursor: pointer;">
+          <article class="book-card" onclick="window.location.href='book.html?id=tak-ne-byvaet'" style="cursor: pointer;">
             <div class="book-card__cover">
               <img class="book-card__cover-img" src="images/Taknebivaet.png" alt="Так не бывает: мужчина из сна" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
               <span class="book-card__badge book-card__badge--corner">Новинка</span>
@@ -95,9 +95,66 @@
                 <span class="book-card__price">149 ₽</span>
                 <div class="book-card__rating">★ 5.0</div>
               </div>
-              <a href="pages/book-detail.html" class="btn btn-primary mt-md" onclick="event.stopPropagation();">Подробнее</a>
+              <div class="book-card__actions">
+                <a href="book.html?id=tak-ne-byvaet" class="btn btn-primary" onclick="event.stopPropagation();">Подробнее</a>
+                <button class="btn btn-secondary" onclick="event.stopPropagation(); addToCart('tak-ne-byvaet')">В корзину</button>
+              </div>
             </div>
           </article>
+
+          <!-- Карточка книги 2 -->
+          <article class="book-card" onclick="window.location.href='book.html?id=internet-v-bolshom-gorode'" style="cursor: pointer;">
+            <div class="book-card__cover">
+              <img class="book-card__cover-img" src="images/internetvbolshomgorode.png" alt="Интернет в большом городе" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
+              <span class="book-card__badge book-card__badge--corner">Хит</span>
+            </div>
+            <div class="book-card__content">
+              <h3 class="book-card__title">Интернет в большом городе</h3>
+              <p class="book-card__author">Елена Ночь</p>
+              <p class="book-card__genre">Романтика / Современность</p>
+              <p class="book-card__description">Искала принца — нашла проблему. Вместо букета — кейс с сюрпризом. Вместо романтического ужина — погоня по всему городу...</p>
+              <div class="book-card__formats">
+                <span class="book-card__format">EPUB</span>
+                <span class="book-card__format">FB2</span>
+                <span class="book-card__format">Аудио</span>
+              </div>
+              <div class="book-card__meta">
+                <span class="book-card__price">149 ₽</span>
+                <div class="book-card__rating">★ 5.0</div>
+              </div>
+              <div class="book-card__actions">
+                <a href="book.html?id=internet-v-bolshom-gorode" class="btn btn-primary" onclick="event.stopPropagation();">Подробнее</a>
+                <button class="btn btn-secondary" onclick="event.stopPropagation(); addToCart('internet-v-bolshom-gorode')">В корзину</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка книги 3 -->
+          <article class="book-card" onclick="window.location.href='book.html?id=yobibliote'" style="cursor: pointer;">
+            <div class="book-card__cover">
+              <img class="book-card__cover-img" src="images/yobibliote.png" alt="Йоу, это библиотекарша" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
+            </div>
+            <div class="book-card__content">
+              <h3 class="book-card__title">Йоу, это библиотекарша</h3>
+              <p class="book-card__author">Елена Ночь</p>
+              <p class="book-card__genre">Романтика / Комедия</p>
+              <p class="book-card__description">Пышная блондинка Эльвира — библиотекарь, чья жизнь состоит из книг, чая и азиатских сериалов. Она не стесняется себя...</p>
+              <div class="book-card__formats">
+                <span class="book-card__format">EPUB</span>
+                <span class="book-card__format">FB2</span>
+                <span class="book-card__format">Аудио</span>
+              </div>
+              <div class="book-card__meta">
+                <span class="book-card__price">149 ₽</span>
+                <div class="book-card__rating">★ 5.0</div>
+              </div>
+              <div class="book-card__actions">
+                <a href="book.html?id=yobibliote" class="btn btn-primary" onclick="event.stopPropagation();">Подробнее</a>
+                <button class="btn btn-secondary" onclick="event.stopPropagation(); addToCart('yobibliote')">В корзину</button>
+              </div>
+            </div>
+          </article>
+        </div>
 
           <!-- Карточка книги 2 -->
           <article class="book-card" onclick="window.location.href='pages/book-detail.html'" style="cursor: pointer;">
