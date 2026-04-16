@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Техподдержка Romanland — помощь с покупкой, скачиванием и чтением книг">
+  <title>Техподдержка | Romanland — Страна романов</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Основной CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="../index.html" class="header__logo">Romanland</a>
+      
+      <nav class="header__nav">
+        <a href="../index.html" class="header__nav-link">Главная</a>
+        <a href="catalog.html" class="header__nav-link">Каталог</a>
+        <a href="about.html" class="header__nav-link">Об авторе</a>
+        <a href="news.html" class="header__nav-link">Новости</a>
+        <a href="support.html" class="header__nav-link header__nav-link--active">Техподдержка</a>
+      </nav>
+      
+      <div class="header__actions">
+        <a href="cart.html" class="btn btn-secondary">Корзина</a>
+        <a href="login.html" class="btn btn-primary">Войти</a>
+        <button class="header__mobile-toggle" aria-label="Меню">
+          <span class="header__mobile-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Техподдержка</h1>
+        <p class="page-header__subtitle">Ответы на частые вопросы и помощь с покупками</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container">
+        <div class="faq-section">
+          <h2 class="section__title">Частые вопросы</h2>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Как купить книгу?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Для покупки книги:</p>
+              <ol>
+                <li>Выберите книгу в каталоге</li>
+                <li>Нажмите кнопку «Купить» на странице книги</li>
+                <li>Зарегистрируйтесь или войдите в личный кабинет</li>
+                <li>Оплатите заказ удобным способом</li>
+                <li>После оплаты книга станет доступна для скачивания в личном кабинете</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Что делать, если файл не скачался?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Если у вас возникли проблемы со скачиванием:</p>
+              <ol>
+                <li>Проверьте стабильность интернет-соединения</li>
+                <li>Попробуйте скачать файл в другом браузере</li>
+                <li>Очистите кэш браузера</li>
+                <li>Если проблема сохраняется — напишите нам на support@romanland.ru, указав номер заказа</li>
+              </ol>
+              <p>Мы вышлем вам ссылку на скачивание вручную в течение нескольких часов.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>В каких форматах доступны книги?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Все книги доступны в популярных форматах:</p>
+              <ul>
+                <li><strong>FB2</strong> — для читалок на Android, iOS</li>
+                <li><strong>EPUB</strong> — универсальный формат для большинства устройств</li>
+                <li><strong>PDF</strong> — для чтения на компьютерах и планшетах</li>
+                <li><strong>MOBI</strong> — для Kindle</li>
+              </ul>
+              <p>После покупки вы сможете скачать книгу в любом из этих форматов.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Как получить доступ к купленной книге?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>После успешной оплаты:</p>
+              <ol>
+                <li>Вы получите письмо на email со ссылкой на скачивание</li>
+                <li>Книга появится в разделе «Мои книги» в личном кабинете</li>
+                <li>Доступ к книге сохраняется навсегда — вы можете скачивать её повторно в любое время</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Можно ли вернуть книгу?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Возврат цифровых книг возможен в следующих случаях:</p>
+              <ul>
+                <li>Техническая неисправность файла (не открывается, повреждён)</li>
+                <li>Ошибочная покупка (если книга ещё не была скачана)</li>
+              </ul>
+              <p>Для оформления возврата напишите на support@romanland.ru в течение 7 дней после покупки.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Какие способы оплаты доступны?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Мы принимаем оплату:</p>
+              <ul>
+                <li>Банковские карты (Visa, Mastercard, МИР)</li>
+                <li>Электронные кошельки (ЮMoney, Qiwi)</li>
+                <li>СБП (Система быстрых платежей)</li>
+              </ul>
+              <p>Все платежи защищены и обрабатываются через надёжные платёжные шлюзы.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Как связаться с поддержкой?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Вы можете связаться с нами любым удобным способом:</p>
+              <ul>
+                <li>Email: <a href="mailto:support@romanland.ru">support@romanland.ru</a></li>
+                <li>Форма обратной связи ниже</li>
+                <li>Социальные сети (ссылки в футере сайта)</li>
+              </ul>
+              <p>Мы отвечаем в течение 24 часов в рабочие дни.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section class="section" style="background-color: var(--color-bg-accent-light);">
+      <div class="container">
+        <div class="contact-form-wrapper">
+          <h2 class="section__title">Написать в поддержку</h2>
+          <p class="section__subtitle">Заполните форму, и мы ответим вам в ближайшее время</p>
+          
+          <form class="contact-form" onsubmit="submitForm(event)">
+            <div class="form-group">
+              <label for="name" class="form-label">Ваше имя</label>
+              <input type="text" id="name" name="name" class="form-input" required placeholder="Иван Иванов">
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="order" class="form-label">Номер заказа (если есть)</label>
+              <input type="text" id="order" name="order" class="form-input" placeholder="#12345">
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Сообщение</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" required placeholder="Опишите вашу проблему или вопрос"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg">Отправить сообщение</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="section">
+      <div class="container">
+        <div class="support-contacts">
+          <h2 class="section__title">Другие способы связи</h2>
+          <div class="support-contacts__grid">
+            <div class="contact-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <h3>Email</h3>
+              <a href="mailto:support@romanland.ru">support@romanland.ru</a>
+            </div>
+            
+            <div class="contact-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <h3>Время ответа</h3>
+              <p>В течение 24 часов</p>
+            </div>
+            
+            <div class="contact-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              <h3>Соцсети</h3>
+              <p>@romanland_books</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__section">
+        <h4>Romanland</h4>
+        <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
+          Страна романов — литературное пространство для продажи романтической литературы напрямую от авторов
+        </p>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Навигация</h4>
+        <ul class="footer__links">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">Об авторе</a></li>
+          <li><a href="news.html">Новости</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__section">
+        <h4>Покупателям</h4>
+        <ul class="footer__links">
+          <li><a href="support.html">Техподдержка</a></li>
+          <li><a href="#">Как купить</a></li>
+          <li><a href="#">Форматы файлов</a></li>
+          <li><a href="#">Возврат</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__section">
+        <h4>Юридическая информация</h4>
+        <ul class="footer__links">
+          <li><a href="#">Политика конфиденциальности</a></li>
+          <li><a href="#">Публичная оферта</a></li>
+          <li><a href="#">Условия использования</a></li>
+          <li><a href="#">Реквизиты</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>&copy; 2024 Romanland. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../js/main.js"></script>
+  <script>
+    function toggleFaq(button) {
+      const item = button.parentElement;
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('.faq-icon');
+      
+      item.classList.toggle('faq-item--active');
+      
+      if (item.classList.contains('faq-item--active')) {
+        icon.style.transform = 'rotate(180deg)';
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      } else {
+        icon.style.transform = 'rotate(0deg)';
+        answer.style.maxHeight = '0';
+      }
+    }
+    
+    function submitForm(event) {
+      event.preventDefault();
+      alert('Ваше сообщение отправлено! Мы ответим вам в течение 24 часов.');
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
