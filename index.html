@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Страна романов Romanland — литературное пространство для продажи романтической литературы напрямую от авторов">
+  <title>Romanland — Страна романов | Романтическая литература</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Основной CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo">Romanland</a>
+      
+      <nav class="header__nav">
+        <a href="index.html" class="header__nav-link">Главная</a>
+        <a href="catalog.html" class="header__nav-link">Каталог</a>
+        <a href="about.html" class="header__nav-link">Об авторе</a>
+        <a href="news.html" class="header__nav-link">Новости</a>
+        <a href="support.html" class="header__nav-link">Техподдержка</a>
+      </nav>
+      
+      <div class="header__actions">
+        <a href="cart.html" class="btn btn-secondary">Корзина</a>
+        <a href="login.html" class="btn btn-primary">Войти</a>
+        <button class="header__mobile-toggle" aria-label="Меню">
+          <span class="header__mobile-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Герой-секция -->
+    <section class="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1>Страна романов Romanland</h1>
+          <p class="hero__subtitle">Литературное пространство, где рождаются эмоции. Прямые продажи книг от авторов без посредников и комиссий.</p>
+          <div class="hero__actions">
+            <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+            <a href="#features" class="btn btn-secondary">Узнать больше</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img src="images/hero-placeholder.jpg" alt="Книги Romanland" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect fill=%22%23F0E8E8%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2224%22 fill=%22%237A3B4A%22%3ERomanland Books%3C/text%3E%3C/svg%3E'">
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция с книгами -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Популярные книги</h2>
+          <p class="section__subtitle">Избранные произведения, которые уже покорили сердца читателей</p>
+        </div>
+        
+        <div class="section__grid">
+          <!-- Карточка книги 1 -->
+          <article class="book-card">
+            <div class="book-card__cover">
+              <img class="book-card__cover-img" src="images/book1.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
+              <span class="book-card__badge">Новинка</span>
+            </div>
+            <div class="book-card__content">
+              <h3 class="book-card__title">Тайна старого поместья</h3>
+              <p class="book-card__author">Анна Романова</p>
+              <p class="book-card__genre">Исторический роман</p>
+              <p class="book-card__description">Захватывающая история любви на фоне событий XIX века. Тайны, интриги и настоящие чувства в атмосфере старинного поместья.</p>
+              <div class="book-card__meta">
+                <span class="book-card__price">299 ₽</span>
+                <div class="book-card__rating">★ 4.8</div>
+              </div>
+              <a href="book-detail.html" class="btn btn-primary mt-md">Подробнее</a>
+            </div>
+          </article>
+
+          <!-- Карточка книги 2 -->
+          <article class="book-card">
+            <div class="book-card__cover">
+              <img class="book-card__cover-img" src="images/book2.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
+            </div>
+            <div class="book-card__content">
+              <h3 class="book-card__title">Сердце в огне</h3>
+              <p class="book-card__author">Елена Ветрова</p>
+              <p class="book-card__genre">Современный роман</p>
+              <p class="book-card__description">История о страсти, предательстве и искуплении. Две судьбы пересекаются в самом неожиданном месте.</p>
+              <div class="book-card__meta">
+                <span class="book-card__price">249 ₽</span>
+                <div class="book-card__rating">★ 4.6</div>
+              </div>
+              <a href="book-detail.html" class="btn btn-primary mt-md">Подробнее</a>
+            </div>
+          </article>
+
+          <!-- Карточка книги 3 -->
+          <article class="book-card">
+            <div class="book-card__cover">
+              <img class="book-card__cover-img" src="images/book3.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
+              <span class="book-card__badge">Хит</span>
+            </div>
+            <div class="book-card__content">
+              <h3 class="book-card__title">Зимняя сказка</h3>
+              <p class="book-card__author">Мария Снежная</p>
+              <p class="book-card__genre">Романтическая фантазия</p>
+              <p class="book-card__description">Волшебная история любви в заснеженном городе. Когда мечты становятся реальностью, а сказка оживает.</p>
+              <div class="book-card__meta">
+                <span class="book-card__price">349 ₽</span>
+                <div class="book-card__rating">★ 4.9</div>
+              </div>
+              <a href="book-detail.html" class="btn btn-primary mt-md">Подробнее</a>
+            </div>
+          </article>
+        </div>
+        
+        <div class="text-center mt-xl">
+          <a href="catalog.html" class="btn btn-secondary">Смотреть весь каталог</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section id="features" class="section features">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Почему Romanland</h2>
+          <p class="section__subtitle">Мы создали пространство, где каждая книга находит своего читателя</p>
+        </div>
+        
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Прямые продажи</h3>
+            <p class="feature-card__text">Покупайте книги напрямую у авторов без посредников и лишних комиссий</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Мгновенный доступ</h3>
+            <p class="feature-card__text">Получите книгу сразу после оплаты в удобном формате</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Уникальные произведения</h3>
+            <p class="feature-card__text">Книги, которые вы не найдете на массовых площадках</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18.36 6.64a9 9 0 11-12.73 0"/>
+                <line x1="12" y1="2" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Поддержка 24/7</h3>
+            <p class="feature-card__text">Поможем с любым вопросом по покупке и чтению книг</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- О проекте -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">О проекте Romanland</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <p style="font-size: var(--text-lg); line-height: var(--leading-relaxed); color: var(--color-text-secondary);">
+            Romanland — это литературное пространство, которое соединяет авторов романтических историй и читателей, 
+            ищущих эмоциональное убежище, атмосферу, чувства и вовлечение. Мы верим, что каждая книга должна найти 
+            своего читателя, а каждый читатель заслуживает доступа к уникальным произведениям.
+          </p>
+          <p style="font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--color-text-secondary);">
+            Наша миссия — создать комфортную среду для выбора и покупки книг, где нет посредников, комиссий агрегаторов 
+            и сложностей. Только вы, книга и эмоции, которые она дарит.
+          </p>
+          <a href="about.html" class="btn btn-secondary mt-lg">Читать подробнее</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Новинки / Скоро выйдет -->
+    <section class="section" style="background-color: var(--color-bg-accent-light);">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Скоро выйдет</h2>
+          <p class="section__subtitle">Следите за новыми релизами и анонсами</p>
+        </div>
+        
+        <div class="section__grid">
+          <article class="book-card">
+            <div class="book-card__cover">
+              <img class="book-card__cover-img" src="images/book-new1.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23D8D4CF%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EСкоро%3C/text%3E%3C/svg%3E'">
+              <span class="book-card__badge" style="background-color: var(--color-accent-rose);">Скоро</span>
+            </div>
+            <div class="book-card__content">
+              <h3 class="book-card__title">Весенний ветер</h3>
+              <p class="book-card__author">Ольга Цветкова</p>
+              <p class="book-card__genre">Современный роман</p>
+              <p class="book-card__description">Ожидается в продаже через 2 недели</p>
+              <div class="book-card__meta">
+                <span class="book-card__price">299 ₽</span>
+              </div>
+              <button class="btn btn-secondary mt-md" disabled>Предзаказ</button>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-card__cover">
+              <img class="book-card__cover-img" src="images/book-new2.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23D8D4CF%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EСкоро%3C/text%3E%3C/svg%3E'">
+              <span class="book-card__badge" style="background-color: var(--color-accent-rose);">Скоро</span>
+            </div>
+            <div class="book-card__content">
+              <h3 class="book-card__title">Ночной поезд</h3>
+              <p class="book-card__author">Дмитрий Путев</p>
+              <p class="book-card__genre">Драма</p>
+              <p class="book-card__description">Ожидается в продаже через 3 недели</p>
+              <div class="book-card__meta">
+                <span class="book-card__price">279 ₽</span>
+              </div>
+              <button class="btn btn-secondary mt-md" disabled>Предзаказ</button>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-card__cover">
+              <img class="book-card__cover-img" src="images/book-new3.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23D8D4CF%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EСкоро%3C/text%3E%3C/svg%3E'">
+              <span class="book-card__badge" style="background-color: var(--color-accent-rose);">Скоро</span>
+            </div>
+            <div class="book-card__content">
+              <h3 class="book-card__title">Летние ночи</h3>
+              <p class="book-card__author">Анна Романова</p>
+              <p class="book-card__genre">Романтика</p>
+              <p class="book-card__description">Ожидается в продаже через месяц</p>
+              <div class="book-card__meta">
+                <span class="book-card__price">319 ₽</span>
+              </div>
+              <button class="btn btn-secondary mt-md" disabled>Предзаказ</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__section">
+        <h4>Romanland</h4>
+        <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
+          Страна романов — литературное пространство для продажи романтической литературы напрямую от авторов
+        </p>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Навигация</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">Об авторе</a></li>
+          <li><a href="news.html">Новости</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Покупателям</h4>
+        <ul class="footer__links">
+          <li><a href="support.html">Техподдержка</a></li>
+          <li><a href="#">Как купить</a></li>
+          <li><a href="#">Форматы файлов</a></li>
+          <li><a href="#">Возврат</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Юридическая информация</h4>
+        <ul class="footer__links">
+          <li><a href="#">Политика конфиденциальности</a></li>
+          <li><a href="#">Публичная оферта</a></li>
+          <li><a href="#">Условия использования</a></li>
+          <li><a href="#">Реквизиты</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer__bottom">
+      <p>&copy; 2024 Romanland. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
