@@ -11,16 +11,25 @@
 <body>
 <header class="header"><div class="container header__container"><a href="index.html" class="header__logo">Romanland</a><nav class="header__nav"><a href="index.html" class="header__nav-link">Главная</a><a href="catalog.html" class="header__nav-link">Каталог</a><a href="about.html" class="header__nav-link">Об авторе</a><a href="news.html" class="header__nav-link header__nav-link--active">Новости</a></nav><div class="header__actions"><button class="theme-toggle" id="themeToggle" aria-label="Переключить тему"><span class="theme-toggle__icon">☀</span></button><a href="cart.html" class="btn btn-secondary">Корзина</a><a href="login.html" class="btn btn-primary">Войти</a><button class="header__mobile-toggle" aria-label="Меню"><span class="header__mobile-icon"></span></button></div></div></header>
 <main>
-<section class="page-header"><div class="container"><h1>Новости</h1><p class="page-header__subtitle">Анонсы релизов, обновлений проекта и редакторские заметки Romanland.</p></div></section>
-<section class="section"><div class="container"><div class="news-grid">
-<article class="news-card" id="page-1"><div class="news-card__content"><div class="news-card__meta"><span class="news-card__date">17 апреля 2026</span><span class="news-card__category">Обновления</span></div><h2 class="news-card__title">Каталог полностью обновлён под книги Елены Ночь</h2><p class="news-card__excerpt">В каталоге оставлены только актуальные книги Romanland: «Так не бывает», «Интернет в большом городе» и «Йоу, это библиотекарша».</p><a href="#" class="news-card__link">Читать далее →</a></div></article>
-<article class="news-card" id="page-2"><div class="news-card__content"><div class="news-card__meta"><span class="news-card__date">10 апреля 2026</span><span class="news-card__category">Платформа</span></div><h2 class="news-card__title">Улучшен путь покупки: от карточки до корзины</h2><p class="news-card__excerpt">Сделан акцент на главном CTA «В корзину», а «Подробнее» оставлено как вторичное действие для спокойного выбора.</p><a href="#" class="news-card__link">Читать далее →</a></div></article>
-<article class="news-card" id="page-3"><div class="news-card__content"><div class="news-card__meta"><span class="news-card__date">2 апреля 2026</span><span class="news-card__category">Редакция</span></div><h2 class="news-card__title">Romanland как камерная бренд-площадка</h2><p class="news-card__excerpt">Мы развиваем проект как эстетичную витрину романтической литературы с фокусом на эмоции, атмосферу и удобную покупку напрямую от автора.</p><a href="#" class="news-card__link">Читать далее →</a></div></article>
-</div>
-<div class="pagination"><a class="pagination-btn pagination-btn--active" href="#page-1">1</a><a class="pagination-btn" href="#page-2">2</a><a class="pagination-btn" href="#page-3">3</a></div>
-</div></section>
+<section class="page-header"><div class="container"><h1>Новости</h1><p class="page-header__subtitle">Анонсы релизов и обновлений Romanland.</p></div></section>
+<section class="section"><div class="container"><div class="news-grid" id="newsGrid"></div><div class="pagination" id="newsPagination"></div></div></section>
 </main>
 <footer class="footer"><div class="container footer__container"><div class="footer__section"><h4>Romanland</h4><p style="font-size: var(--text-sm); color: var(--color-text-secondary);">Страна романов — камерная площадка романтической литературы.</p></div><div class="footer__section"><h4>Навигация</h4><ul class="footer__links"><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Каталог</a></li><li><a href="about.html">Об авторе</a></li><li><a href="news.html">Новости</a></li></ul></div><div class="footer__section"><h4>Покупателям</h4><ul class="footer__links"><li><a href="support.html">Техподдержка</a></li><li><a href="how-to-buy.html">Как купить</a></li><li><a href="formats.html">Форматы файлов</a></li><li><a href="return.html">Возврат</a></li></ul></div><div class="footer__section"><h4>Юридическая информация</h4><ul class="footer__links"><li><a href="privacy.html">Политика конфиденциальности</a></li><li><a href="offer.html">Публичная оферта</a></li><li><a href="terms.html">Условия использования</a></li><li><a href="details.html">Реквизиты</a></li></ul></div></div><div class="container footer__bottom"><p>&copy; 2026 Romanland. Все права защищены.</p></div></footer>
 <script src="js/main.js"></script>
+<script>
+const posts = [
+  { date:'17 апреля 2026', cat:'Обновления', title:'Каталог полностью обновлён под книги Елены Ночь', excerpt:'В каталоге оставлены только актуальные книги: «Так не бывает», «Интернет в большом городе» и «Йоу, это библиотекарша».', page:1 },
+  { date:'10 апреля 2026', cat:'Платформа', title:'Улучшен путь покупки: от карточки до корзины', excerpt:'Сделан акцент на главном CTA «В корзину», а «Подробнее» оставлено вторичным действием.', page:2 },
+  { date:'2 апреля 2026', cat:'Редакция', title:'Romanland как камерная бренд-площадка', excerpt:'Развиваем проект как эстетичную витрину романтической литературы с прямой продажей от автора.', page:3 }
+];
+const params = new URLSearchParams(window.location.search);
+let page = Number(params.get('page') || '1');
+if (page < 1 || page > 3) page = 1;
+const grid = document.getElementById('newsGrid');
+const pag = document.getElementById('newsPagination');
+const p = posts.find(x => x.page === page);
+grid.innerHTML = `<article class="news-card"><div class="news-card__content"><div class="news-card__meta"><span class="news-card__date">${p.date}</span><span class="news-card__category">${p.cat}</span></div><h2 class="news-card__title">${p.title}</h2><p class="news-card__excerpt">${p.excerpt}</p></div></article>`;
+pag.innerHTML = [1,2,3].map(n => `<a class="pagination-btn ${n===page ? 'pagination-btn--active' : ''}" href="news.html?page=${n}">${n}</a>`).join('');
+</script>
 </body>
 </html>
