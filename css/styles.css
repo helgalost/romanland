@@ -843,6 +843,9 @@ a:hover {
 }
 
 .book-detail__cover-img {
+  max-width: 400px;
+  height: auto;
+  display: block;
   width: 100%;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
@@ -1203,9 +1206,12 @@ a:hover {
 }
 
 .book-detail__cover-img {
-  width: 100%;
+  max-width: 400px;
   height: auto;
   display: block;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
 }
 
 .book-detail__info {
