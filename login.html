@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Вход в личный кабинет Romanland">
+  <title>Вход | Romanland — Страна романов</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Основной CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo">Romanland</a>
+      
+      <nav class="header__nav">
+        <a href="index.html" class="header__nav-link">Главная</a>
+        <a href="pages/catalog.html" class="header__nav-link">Каталог</a>
+        <a href="pages/about.html" class="header__nav-link">Об авторе</a>
+        <a href="pages/news.html" class="header__nav-link">Новости</a>
+      </nav>
+      
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+          <span class="theme-toggle__icon">☀</span>
+        </button>
+        <a href="cart.html" class="btn btn-secondary">Корзина</a>
+        <a href="login.html" class="btn btn-primary">Войти</a>
+        <button class="header__mobile-toggle" aria-label="Меню">
+          <span class="header__mobile-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Вход в личный кабинет</h1>
+        <p class="page-header__subtitle">Войдите для доступа к купленным книгам и истории заказов</p>
+      </div>
+    </section>
+
+    <!-- Форма входа -->
+    <section class="section">
+      <div class="container">
+        <div class="auth-form-wrapper">
+          <form class="auth-form" onsubmit="handleLogin(event)">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="password" class="form-label">Пароль</label>
+              <input type="password" id="password" name="password" class="form-input" required placeholder="Ваш пароль">
+            </div>
+            
+            <div class="form-group form-group--inline">
+              <label class="checkbox-label">
+                <input type="checkbox" name="remember">
+                <span>Запомнить меня</span>
+              </label>
+              <a href="#" class="link-muted">Забыли пароль?</a>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg btn--full">Войти</button>
+            
+            <div class="auth-form__divider">
+              <span>или</span>
+            </div>
+            
+            <button type="button" class="btn btn-secondary btn--full" onclick="alert('Регистрация будет доступна после подключения системы аутентификации')">Зарегистрироваться</button>
+          </form>
+          
+          <div class="auth-form__info">
+            <p>После входа вы сможете:</p>
+            <ul>
+              <li>Доступ к купленным книгам</li>
+              <li>История заказов</li>
+              <li>Избранное</li>
+              <li>Персональные рекомендации</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__section">
+        <h4>Romanland</h4>
+        <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
+          Страна романов — литературное пространство для продажи романтической литературы напрямую от авторов
+        </p>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Навигация</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="pages/catalog.html">Каталог</a></li>
+          <li><a href="pages/about.html">Об авторе</a></li>
+          <li><a href="pages/news.html">Новости</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__section">
+        <h4>Покупателям</h4>
+        <ul class="footer__links">
+          <li><a href="pages/support.html">Техподдержка</a></li>
+          <li><a href="how-to-buy.html">Как купить</a></li>
+          <li><a href="formats.html">Форматы файлов</a></li>
+          <li><a href="return.html">Возврат</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__section">
+        <h4>Юридическая информация</h4>
+        <ul class="footer__links">
+          <li><a href="privacy.html">Политика конфиденциальности</a></li>
+          <li><a href="offer.html">Публичная оферта</a></li>
+          <li><a href="terms.html">Условия использования</a></li>
+          <li><a href="details.html">Реквизиты</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>&copy; 2026 Romanland. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      alert('Вход будет доступен после подключения системы аутентификации. Сейчас вы можете продолжить покупки без регистрации.');
+    }
+  </script>
+</body>
+</html>

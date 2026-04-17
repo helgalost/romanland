@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новости | Romanland — Страна романов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <a href="../index.html" class="header__logo">Romanland</a>
+      <nav class="header__nav">
+        <a href="../index.html" class="header__nav-link">Главная</a>
+        <a href="catalog.html" class="header__nav-link">Каталог</a>
+        <a href="about.html" class="header__nav-link">Об авторе</a>
+        <a href="news.html" class="header__nav-link header__nav-link--active">Новости</a>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+          <span class="theme-toggle__icon">☀</span>
+        </button>
+        <a href="../cart.html" class="btn btn-secondary">Корзина</a>
+        <a href="../login.html" class="btn btn-primary">Войти</a>
+        <button class="header__mobile-toggle" aria-label="Меню">
+          <span class="header__mobile-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Новость</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="news-single">
+          <div class="news-single__image">
+            <img src="../images/news1.jpg" alt="Новость" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22 viewBox=%220 0 800 400%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22800%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2224%22 fill=%22%237A3B4A%22%3ENews Image%3C/text%3E%3C/svg%3E'">
+          </div>
+          <div class="news-single__meta">
+            <span class="news-single__date">15 декабря 2024</span>
+            <span class="news-single__category">Анонсы</span>
+          </div>
+          <h1 class="news-single__title">«Тайна старого поместья» — новая книга Анны Романовой уже в продаже!</h1>
+          <div class="news-single__content">
+            <p>Долгожданная премьера! Исторический роман «Тайна старого поместья» теперь доступен для покупки.</p>
+            <p>Погрузитесь в атмосферу викторианской Англии с её интригами, тайнами и настоящей любовью. Главная героиня, молодая гувернантка, приезжает в старинное поместье и обнаруживает, что стены хранят секреты прошлых поколений.</p>
+            <p>Книга доступна во всех популярных форматах: EPUB, FB2, PDF, MOBI. После покупки вы получите мгновенный доступ к скачиванию.</p>
+          </div>
+          <div class="news-single__actions">
+            <a href="catalog.html" class="btn btn-primary">Купить книгу</a>
+            <a href="news.html" class="btn btn-secondary">Вернуться к новостям</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__section">
+        <h4>Romanland</h4>
+        <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
+          Страна романов — литературное пространство для продажи романтической литературы напрямую от авторов
+        </p>
+      </div>
+      <div class="footer__section">
+        <h4>Навигация</h4>
+        <ul class="footer__links">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">Об авторе</a></li>
+          <li><a href="news.html">Новости</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Покупателям</h4>
+        <ul class="footer__links">
+          <li><a href="support.html">Техподдержка</a></li>
+          <li><a href="../how-to-buy.html">Как купить</a></li>
+          <li><a href="../formats.html">Форматы файлов</a></li>
+          <li><a href="../return.html">Возврат</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Юридическая информация</h4>
+        <ul class="footer__links">
+          <li><a href="../privacy.html">Политика конфиденциальности</a></li>
+          <li><a href="../offer.html">Публичная оферта</a></li>
+          <li><a href="../terms.html">Условия использования</a></li>
+          <li><a href="../details.html">Реквизиты</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; 2026 Romanland. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
