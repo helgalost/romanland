@@ -132,19 +132,6 @@
       `;
     });
 
-    function addToCart(bookId) {
-      const book = getBookById(bookId);
-      const cart = JSON.parse(localStorage.getItem('romanland_cart') || '[]');
-      cart.push({
-        id: book.id,
-        title: book.title,
-        author: book.author,
-        price: book.price,
-        image: book.image
-      });
-      localStorage.setItem('romanland_cart', JSON.stringify(cart));
-      alert('Книга добавлена в корзину!');
-    }
   </script>
 </body>
 </html>
