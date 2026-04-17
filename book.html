@@ -95,22 +95,38 @@
       
       content.innerHTML = `
         <div class="book-detail">
-          <div class="book-detail__cover">
-            <img src="${book.image}" alt="${book.title}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка%3C/text%3E%3C/svg%3E'">
-          </div>
-          <div class="book-detail__info">
-            <h1 class="book-detail__title">${book.title}</h1>
-            <p class="book-detail__author">${book.author}</p>
-            <p class="book-detail__genre">${book.genre}</p>
-            <div class="book-detail__rating">★ ${book.rating}</div>
-            <p class="book-detail__description">${book.fullDescription}</p>
-            <div class="book-detail__formats">${formatsHtml}</div>
-            <div class="book-detail__meta">
-              <span>Страниц: ${book.pages}</span>
-              <span class="book-detail__price">${book.price} ₽</span>
+          <div class="book-detail__container">
+            <div class="book-detail__cover">
+              <img src="${book.image}" alt="${book.title}" class="book-detail__cover-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка%3C/text%3E%3C/svg%3E'">
             </div>
-            <button class="btn btn-primary btn--full" onclick="addToCart('${book.id}')">Добавить в корзину</button>
-            <a href="catalog.html" class="btn btn-secondary btn--full">Вернуться в каталог</a>
+            <div class="book-detail__content">
+              <h1>${book.title}</h1>
+              <p class="book-detail__author">${book.author}</p>
+              <div class="book-detail__meta">
+                <div class="book-detail__meta-item">
+                  <span class="book-detail__meta-label">Жанр</span>
+                  <span class="book-detail__meta-value">${book.genre}</span>
+                </div>
+                <div class="book-detail__meta-item">
+                  <span class="book-detail__meta-label">Рейтинг</span>
+                  <span class="book-detail__meta-value">★ ${book.rating}</span>
+                </div>
+                <div class="book-detail__meta-item">
+                  <span class="book-detail__meta-label">Страниц</span>
+                  <span class="book-detail__meta-value">${book.pages}</span>
+                </div>
+              </div>
+              <h2 class="book-detail__section-title">О книге</h2>
+              <p class="book-detail__description">${book.fullDescription}</p>
+              <div class="book-detail__formats" style="margin-bottom: var(--spacing-xl);">${formatsHtml}</div>
+              <div class="book-detail__price-block">
+                <div class="book-detail__price">${book.price} ₽</div>
+                <div class="book-detail__actions">
+                  <button class="btn btn-primary" style="flex: 1;" onclick="addToCart('${book.id}')">В корзину</button>
+                  <a href="catalog.html" class="btn btn-secondary">Назад</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       `;
