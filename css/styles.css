@@ -2346,3 +2346,52 @@ body::before {
 [data-theme="dark"] .hero__eyebrow {
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
 }
+
+/* --- Final glass overrides --- */
+.header {
+  background: transparent;
+  border-bottom: 0;
+  box-shadow: none;
+  padding: 8px 0;
+}
+
+.header__container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.34));
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: 0 10px 24px rgba(41, 30, 45, 0.12);
+}
+
+[data-theme="dark"] .header__container {
+  background: linear-gradient(135deg, rgba(24, 19, 36, 0.68), rgba(24, 19, 36, 0.38));
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+}
+
+.book-card__content {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.44), rgba(255, 255, 255, 0.2));
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] .book-card__content {
+  background: linear-gradient(145deg, rgba(35, 28, 50, 0.62), rgba(35, 28, 50, 0.34));
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 6px 0;
+  }
+
+  .header__container {
+    border-radius: 14px;
+    padding: 6px 10px;
+  }
+}
