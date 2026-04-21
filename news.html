@@ -3,253 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Новости книжного мира Romanland — анонсы новых книг, события и обновления">
-  <title>Новости | Romanland — Страна романов</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Новости | Romanland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  
-  <!-- Основной CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Шапка сайта -->
-  <header class="header">
-    <div class="container header__container">
-      <a href="index.html" class="header__logo">Romanland</a>
-      
-      <nav class="header__nav">
-        <a href="index.html" class="header__nav-link">Главная</a>
-        <a href="catalog.html" class="header__nav-link">Каталог</a>
-        <a href="about.html" class="header__nav-link">Об авторе</a>
-        <a href="news.html" class="header__nav-link header__nav-link--active">Новости</a>
-      </nav>
-      
-      <div class="header__actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
-          <span class="theme-toggle__icon">☀</span>
-        </button>
-        <a href="cart.html" class="btn btn-secondary">Корзина</a>
-        <a href="login.html" class="btn btn-primary">Войти</a>
-        <button class="header__mobile-toggle" aria-label="Меню">
-          <span class="header__mobile-icon"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Заголовок страницы -->
-    <section class="page-header">
-      <div class="container">
-        <h1>Новости</h1>
-        <p class="page-header__subtitle">Анонсы новых книг, события и обновления проекта Romanland</p>
-      </div>
-    </section>
-
-    <!-- Список новостей -->
-    <section class="section">
-      <div class="container">
-        <div class="news-grid">
-          <!-- Новость 1 -->
-          <article class="news-card">
-            <div class="news-card__image">
-              <img src="images/news1.jpg" alt="Новинка декабря" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2220%22 fill=%22%237A3B4A%22%3ENews Image%3C/text%3E%3C/svg%3E'">
-              <span class="news-card__badge">Новое</span>
-            </div>
-            <div class="news-card__content">
-              <div class="news-card__meta">
-                <span class="news-card__date">15 декабря 2024</span>
-                <span class="news-card__category">Анонсы</span>
-              </div>
-              <h2 class="news-card__title">«Тайна старого поместья» — новая книга Анны Романовой уже в продаже!</h2>
-              <p class="news-card__excerpt">
-                Долгожданная премьера! Исторический роман «Тайна старого поместья» теперь доступен для покупки. 
-                Погрузитесь в атмосферу викторианской Англии с её интригами, тайнами и настоящей любовью.
-              </p>
-              <a href="news-single.html" class="news-card__link">Читать далее →</a>
-            </div>
-          </article>
-
-          <!-- Новость 2 -->
-          <article class="news-card">
-            <div class="news-card__image">
-              <img src="images/news2.jpg" alt="Зимняя распродажа" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2220%22 fill=%22%237A3B4A%22%3ENews Image%3C/text%3E%3C/svg%3E'">
-            </div>
-            <div class="news-card__content">
-              <div class="news-card__meta">
-                <span class="news-card__date">1 декабря 2024</span>
-                <span class="news-card__category">Акции</span>
-              </div>
-              <h2 class="news-card__title">Зимняя коллекция: скидки на популярные романы</h2>
-              <p class="news-card__excerpt">
-                special Предложение месяца! Скидки до 20% на бестселлеры Romanland. 
-                Успейте купить любимые книги по выгодной цене до конца декабря.
-              </p>
-              <a href="news-single.html" class="news-card__link">Читать далее →</a>
-            </div>
-          </article>
-
-          <!-- Новость 3 -->
-          <article class="news-card">
-            <div class="news-card__image">
-              <img src="images/news3.jpg" alt="Предзаказ" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2220%22 fill=%22%237A3B4A%22%3ENews Image%3C/text%3E%3C/svg%3E'">
-              <span class="news-card__badge" style="background-color: var(--color-accent-rose);">Скоро</span>
-            </div>
-            <div class="news-card__content">
-              <div class="news-card__meta">
-                <span class="news-card__date">20 ноября 2024</span>
-                <span class="news-card__category">Анонсы</span>
-              </div>
-              <h2 class="news-card__title">Открыт предзаказ на книгу «Летние ночи»</h2>
-              <p class="news-card__excerpt">
-                Новый роман Анны Романовой «Летние ночи» выйдет в январе 2025 года. 
-                Оформите предзаказ сейчас и получите книгу в день релиза со скидкой 15%.
-              </p>
-              <a href="news-single.html" class="news-card__link">Читать далее →</a>
-            </div>
-          </article>
-
-          <!-- Новость 4 -->
-          <article class="news-card">
-            <div class="news-card__image">
-              <img src="images/news4.jpg" alt="Обновление сайта" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2220%22 fill=%22%237A3B4A%22%3ENews Image%3C/text%3E%3C/svg%3E'">
-            </div>
-            <div class="news-card__content">
-              <div class="news-card__meta">
-                <span class="news-card__date">10 ноября 2024</span>
-                <span class="news-card__category">Обновления</span>
-              </div>
-              <h2 class="news-card__title">Romanland обновился: новый дизайн и удобный каталог</h2>
-              <p class="news-card__excerpt">
-                Мы обновили сайт, чтобы вам было ещё удобнее выбирать и покупать книги. 
-                Узнайте о всех улучшениях и новых функциях.
-              </p>
-              <a href="news-single.html" class="news-card__link">Читать далее →</a>
-            </div>
-          </article>
-
-          <!-- Новость 5 -->
-          <article class="news-card">
-            <div class="news-card__image">
-              <img src="images/news5.jpg" alt="Подборка книг" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2220%22 fill=%22%237A3B4A%22%3ENews Image%3C/text%3E%3C/svg%3E'">
-            </div>
-            <div class="news-card__content">
-              <div class="news-card__meta">
-                <span class="news-card__date">1 ноября 2024</span>
-                <span class="news-card__category">Подборки</span>
-              </div>
-              <h2 class="news-card__title">5 причин прочитать исторические романы этой осенью</h2>
-              <p class="news-card__excerpt">
-                Осень — идеальное время для погружения в истории прошлого. 
-                Делимся подборкой лучших исторических романов для уютных вечеров.
-              </p>
-              <a href="news-single.html" class="news-card__link">Читать далее →</a>
-            </div>
-          </article>
-
-          <!-- Новость 6 -->
-          <article class="news-card">
-            <div class="news-card__image">
-              <img src="images/news6.jpg" alt="Благодарность читателям" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2220%22 fill=%22%237A3B4A%22%3ENews Image%3C/text%3E%3C/svg%3E'">
-            </div>
-            <div class="news-card__content">
-              <div class="news-card__meta">
-                <span class="news-card__date">15 октября 2024</span>
-                <span class="news-card__category">События</span>
-              </div>
-              <h2 class="news-card__title">Спасибо за 1000 проданных книг!</h2>
-              <p class="news-card__excerpt">
-                Romanland достиг важной вехи — мы продали уже 1000 книг! 
-                Благодарим каждого читателя за доверие и поддержку.
-              </p>
-              <a href="news-single.html" class="news-card__link">Читать далее →</a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Пагинация -->
-        <div class="pagination">
-          <button class="pagination-btn" disabled>← Назад</button>
-          <button class="pagination-btn pagination-btn--active">1</button>
-          <button class="pagination-btn">2</button>
-          <button class="pagination-btn">3</button>
-          <button class="pagination-btn">Вперёд →</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Подписка на новости -->
-    <section class="section" style="background-color: var(--color-bg-accent-light);">
-      <div class="container">
-        <div class="newsletter">
-          <h2 class="section__title">Подпишитесь на новости</h2>
-          <p class="section__subtitle">Узнавайте первыми о новых книгах, акциях и событиях Romanland</p>
-          <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-            <input type="email" class="form-input newsletter-input" required placeholder="Ваш email">
-            <button type="submit" class="btn btn-primary">Подписаться</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Подвал -->
-  <footer class="footer">
-    <div class="container footer__container">
-      <div class="footer__section">
-        <h4>Romanland</h4>
-        <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          Страна романов — литературное пространство для продажи романтической литературы напрямую от авторов
-        </p>
-      </div>
-      
-      <div class="footer__section">
-        <h4>Навигация</h4>
-        <ul class="footer__links">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="about.html">Об авторе</a></li>
-          <li><a href="news.html">Новости</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__section">
-        <h4>Покупателям</h4>
-        <ul class="footer__links">
-          <li><a href="support.html">Техподдержка</a></li>
-          <li><a href="how-to-buy.html">Как купить</a></li>
-          <li><a href="formats.html">Форматы файлов</a></li>
-          <li><a href="return.html">Возврат</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__section">
-        <h4>Юридическая информация</h4>
-        <ul class="footer__links">
-          <li><a href="privacy.html">Политика конфиденциальности</a></li>
-          <li><a href="offer.html">Публичная оферта</a></li>
-          <li><a href="terms.html">Условия использования</a></li>
-          <li><a href="details.html">Реквизиты</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="container footer__bottom">
-      <p>&copy; 2024 Romanland. Все права защищены.</p>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="js/main.js"></script>
-  <script>
-    function subscribeNewsletter(event) {
-      event.preventDefault();
-      alert('Спасибо за подписку! Вы будете получать новости Romanland на ваш email.');
-      event.target.reset();
-    }
-  </script>
+<header class="header"><div class="container header__container"><a href="index.html" class="header__logo">Romanland</a><nav class="header__nav"><a href="index.html" class="header__nav-link">Главная</a><a href="catalog.html" class="header__nav-link">Каталог</a><a href="about.html" class="header__nav-link">Об авторе</a><a href="news.html" class="header__nav-link header__nav-link--active">Новости</a></nav><div class="header__actions"><button class="theme-toggle" id="themeToggle" aria-label="Переключить тему"><span class="theme-toggle__icon">☀</span></button><a href="cart.html" class="btn btn-secondary">Корзина</a><a href="login.html" class="btn btn-primary">Войти</a><button class="header__mobile-toggle" aria-label="Меню"><span class="header__mobile-icon"></span></button></div></div></header>
+<main>
+<section class="page-header"><div class="container"><h1>Новости</h1><p class="page-header__subtitle">Анонсы релизов и обновлений Romanland.</p></div></section>
+<section class="section"><div class="container"><div class="news-grid" id="newsGrid"></div><div class="pagination" id="newsPagination"></div></div></section>
+</main>
+<footer class="footer"><div class="container footer__container"><div class="footer__section"><h4>Romanland</h4><p style="font-size: var(--text-sm); color: var(--color-text-secondary);">Страна романов — камерная площадка романтической литературы.</p></div><div class="footer__section"><h4>Навигация</h4><ul class="footer__links"><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Каталог</a></li><li><a href="about.html">Об авторе</a></li><li><a href="news.html">Новости</a></li></ul></div><div class="footer__section"><h4>Покупателям</h4><ul class="footer__links"><li><a href="support.html">Техподдержка</a></li><li><a href="how-to-buy.html">Как купить</a></li><li><a href="formats.html">Форматы файлов</a></li><li><a href="return.html">Возврат</a></li></ul></div><div class="footer__section"><h4>Юридическая информация</h4><ul class="footer__links"><li><a href="privacy.html">Политика конфиденциальности</a></li><li><a href="offer.html">Публичная оферта</a></li><li><a href="terms.html">Условия использования</a></li><li><a href="details.html">Реквизиты</a></li></ul></div></div><div class="container footer__bottom"><p>&copy; 2026 Romanland. Все права защищены.</p></div></footer>
+<script src="js/main.js"></script>
+<script>
+const posts = [
+  { date:'17 апреля 2026', cat:'Обновления', title:'Каталог полностью обновлён под книги Елены Ночь', excerpt:'В каталоге оставлены только актуальные книги: «Так не бывает», «Интернет в большом городе» и «Йоу, это библиотекарша».', page:1 },
+  { date:'10 апреля 2026', cat:'Платформа', title:'Улучшен путь покупки: от карточки до корзины', excerpt:'Сделан акцент на главном CTA «В корзину», а «Подробнее» оставлено вторичным действием.', page:2 },
+  { date:'2 апреля 2026', cat:'Редакция', title:'Romanland как камерная бренд-площадка', excerpt:'Развиваем проект как эстетичную витрину романтической литературы с прямой продажей от автора.', page:3 }
+];
+const params = new URLSearchParams(window.location.search);
+let page = Number(params.get('page') || '1');
+if (page < 1 || page > 3) page = 1;
+const grid = document.getElementById('newsGrid');
+const pag = document.getElementById('newsPagination');
+const p = posts.find(x => x.page === page);
+grid.innerHTML = `<article class="news-card"><div class="news-card__content"><div class="news-card__meta"><span class="news-card__date">${p.date}</span><span class="news-card__category">${p.cat}</span></div><h2 class="news-card__title">${p.title}</h2><p class="news-card__excerpt">${p.excerpt}</p></div></article>`;
+pag.innerHTML = [1,2,3].map(n => `<a class="pagination-btn ${n===page ? 'pagination-btn--active' : ''}" href="news.html?page=${n}">${n}</a>`).join('');
+</script>
 </body>
 </html>
