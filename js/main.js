@@ -102,7 +102,7 @@ document.querySelectorAll('.faq-item__question').forEach(question => {
 });
 
 // Subtle reveal animation
-const revealElements = document.querySelectorAll('.section, .book-card, .feature-card, .news-card');
+const revealElements = document.querySelectorAll('.section, .feature-card, .news-card');
 if ('IntersectionObserver' in window && revealElements.length) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
