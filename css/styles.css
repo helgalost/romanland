@@ -2148,7 +2148,7 @@ body::before {
 .hero {
   background:
     linear-gradient(rgba(245, 235, 230, 0.45), rgba(245, 235, 230, 0.45)),
-    url('fon.png'),
+    url('../fon.png'),
     radial-gradient(1000px 500px at 10% 10%, rgba(230, 180, 200, 0.22) 0%, transparent 55%),
     radial-gradient(900px 450px at 85% 20%, rgba(160, 130, 190, 0.18) 0%, transparent 60%),
     linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-accent-light) 100%);
@@ -2211,14 +2211,18 @@ body::before {
 
 .book-card__actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
+  width: 100%;
 }
 
 .book-card__actions .btn {
   width: 100%;
   white-space: nowrap;
+  min-width: 0;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
 }
 
 .btn--full {
