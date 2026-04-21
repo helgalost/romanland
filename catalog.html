@@ -3,305 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог книг Romanland — романтическая литература напрямую от авторов">
+  <meta name="description" content="Каталог книг Romanland — романтическая литература Елены Ночь напрямую от автора.">
   <title>Каталог книг | Romanland — Страна романов</title>
-  
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  
-  <!-- Основной CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Шапка сайта -->
-  <header class="header">
-    <div class="container header__container">
-      <a href="index.html" class="header__logo">Romanland</a>
-      
-      <nav class="header__nav">
-        <a href="index.html" class="header__nav-link">Главная</a>
-        <a href="catalog.html" class="header__nav-link header__nav-link--active">Каталог</a>
-        <a href="about.html" class="header__nav-link">Об авторе</a>
-        <a href="news.html" class="header__nav-link">Новости</a>
-      </nav>
-      
-      <div class="header__actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
-          <span class="theme-toggle__icon">☀</span>
-        </button>
-        <a href="cart.html" class="btn btn-secondary">Корзина</a>
-        <a href="login.html" class="btn btn-primary">Войти</a>
-        <button class="header__mobile-toggle" aria-label="Меню">
-          <span class="header__mobile-icon"></span>
-        </button>
-      </div>
-    </div>
-  </header>
+<header class="header"><div class="container header__container"><a href="index.html" class="header__logo">Romanland</a><nav class="header__nav"><a href="index.html" class="header__nav-link">Главная</a><a href="catalog.html" class="header__nav-link header__nav-link--active">Каталог</a><a href="about.html" class="header__nav-link">Об авторе</a><a href="news.html" class="header__nav-link">Новости</a></nav><div class="header__actions"><button class="theme-toggle" id="themeToggle" aria-label="Переключить тему"><span class="theme-toggle__icon">☀</span></button><a href="cart.html" class="btn btn-secondary">Корзина</a><a href="login.html" class="btn btn-primary">Войти</a><button class="header__mobile-toggle" aria-label="Меню"><span class="header__mobile-icon"></span></button></div></div></header>
+<main>
+  <section class="page-header"><div class="container"><h1>Каталог книг</h1><p class="page-header__subtitle">Выберите историю по настроению, жанру и формату.</p></div></section>
+  <section class="section"><div class="container catalog-layout">
+    <aside class="catalog-filters">
+      <h3>Фильтры</h3>
+      <label class="filter-option"><input type="radio" name="genre" value="all" checked>Все жанры</label>
+      <label class="filter-option"><input type="radio" name="genre" value="Мистика">Мистика</label>
+      <label class="filter-option"><input type="radio" name="genre" value="Современность">Современность</label>
+      <label class="filter-option"><input type="radio" name="genre" value="Комедия">Комедия</label>
+      <hr style="margin:16px 0; border-color: var(--color-border)">
+      <label class="filter-option"><input type="checkbox" id="audioOnly">Только с аудиоформатом</label>
+      <button id="clearFilters" class="btn btn-secondary btn--full" style="margin-top:12px;">Сбросить</button>
+    </aside>
+    <div class="section__grid" id="catalogGrid"></div>
+  </div></section>
+</main>
+<footer class="footer"><div class="container footer__container"><div class="footer__section"><h4>Romanland</h4><p style="font-size: var(--text-sm); color: var(--color-text-secondary);">Страна романов — камерная площадка романтической литературы.</p></div><div class="footer__section"><h4>Навигация</h4><ul class="footer__links"><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Каталог</a></li><li><a href="about.html">Об авторе</a></li><li><a href="news.html">Новости</a></li></ul></div><div class="footer__section"><h4>Покупателям</h4><ul class="footer__links"><li><a href="support.html">Техподдержка</a></li><li><a href="how-to-buy.html">Как купить</a></li><li><a href="formats.html">Форматы файлов</a></li><li><a href="return.html">Возврат</a></li></ul></div><div class="footer__section"><h4>Юридическая информация</h4><ul class="footer__links"><li><a href="privacy.html">Политика конфиденциальности</a></li><li><a href="offer.html">Публичная оферта</a></li><li><a href="terms.html">Условия использования</a></li><li><a href="details.html">Реквизиты</a></li></ul></div></div><div class="container footer__bottom"><p>&copy; 2026 Romanland. Все права защищены.</p></div></footer>
+<script src="js/data.js"></script><script src="js/main.js"></script>
+<script>
+const grid = document.getElementById('catalogGrid');
+const genreInputs = document.querySelectorAll('input[name="genre"]');
+const audioOnly = document.getElementById('audioOnly');
+const clearBtn = document.getElementById('clearFilters');
 
-  <main>
-    <!-- Заголовок страницы -->
-    <section class="page-header">
-      <div class="container">
-        <h1>Каталог книг</h1>
-        <p class="page-header__subtitle">Выберите книгу по душе из нашей коллекции романтических произведений</p>
-      </div>
-    </section>
+function card(book) {
+  return `<article class="book-card" onclick="window.location.href='book.html?id=${book.id}'" style="cursor:pointer;"><div class="book-card__cover"><img class="book-card__cover-img" src="${book.image}" alt="${book.title}">${book.badge ? `<span class="book-card__badge book-card__badge--corner">${book.badge}</span>` : ''}</div><div class="book-card__content"><h3 class="book-card__title">${book.title}</h3><p class="book-card__author">${book.author}</p><p class="book-card__genre">${book.genre}</p><p class="book-card__description">${book.description}</p><div class="book-card__meta"><span class="book-card__price">${book.price} ₽</span><div class="book-card__rating">★ ${book.rating}</div></div><div class="book-card__actions"><button class="btn btn-primary btn--full" onclick="event.stopPropagation(); addToCart('${book.id}')">В корзину</button><a href="book.html?id=${book.id}" class="btn btn-secondary btn--full" onclick="event.stopPropagation();">Подробнее</a></div></div></article>`;
+}
 
-    <!-- Фильтры и каталог -->
-    <section class="section">
-      <div class="container">
-        <div class="catalog-layout">
-          <!-- Боковая панель с фильтрами -->
-          <aside class="catalog-sidebar">
-            <div class="filter-group">
-              <h3 class="filter-title">Жанры</h3>
-              <label class="filter-checkbox">
-                <input type="checkbox" checked>
-                <span>Все жанры</span>
-              </label>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>Исторический роман</span>
-              </label>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>Современный роман</span>
-              </label>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>Романтическая фантазия</span>
-              </label>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>Драма</span>
-              </label>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>Романтика</span>
-              </label>
-            </div>
+function renderCatalog() {
+  const genre = [...genreInputs].find(i => i.checked)?.value || 'all';
+  const filtered = getAllBooks().filter(book => {
+    const genreOk = genre === 'all' || book.genre.includes(genre);
+    const audioOk = !audioOnly.checked || book.formats.includes('Аудио');
+    return genreOk && audioOk;
+  });
+  grid.innerHTML = filtered.length ? filtered.map(card).join('') : '<p>По выбранным фильтрам книги не найдены.</p>';
+}
 
-            <div class="filter-group">
-              <h3 class="filter-title">Цена</h3>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>до 250 ₽</span>
-              </label>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>250–300 ₽</span>
-              </label>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>300–350 ₽</span>
-              </label>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>от 350 ₽</span>
-              </label>
-            </div>
+genreInputs.forEach(i => i.addEventListener('change', renderCatalog));
+audioOnly.addEventListener('change', renderCatalog);
+clearBtn.addEventListener('click', () => {
+  document.querySelector('input[name="genre"][value="all"]').checked = true;
+  audioOnly.checked = false;
+  renderCatalog();
+});
 
-            <div class="filter-group">
-              <h3 class="filter-title">Статус</h3>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>Новинки</span>
-              </label>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>Хиты продаж</span>
-              </label>
-              <label class="filter-checkbox">
-                <input type="checkbox">
-                <span>Скоро выйдет</span>
-              </label>
-            </div>
-          </aside>
-
-          <!-- Сетка каталога -->
-          <div class="catalog-grid">
-            <div class="catalog-controls">
-              <select class="catalog-sort">
-                <option value="popular">По популярности</option>
-                <option value="newest">По новизне</option>
-                <option value="price-asc">По цене (возрастание)</option>
-                <option value="price-desc">По цене (убывание)</option>
-                <option value="rating">По рейтингу</option>
-              </select>
-              <span class="catalog-count">Найдено 12 книг</span>
-            </div>
-
-            <!-- Карточка книги 1 -->
-            <article class="book-card">
-              <div class="book-card__cover">
-                <img class="book-card__cover-img" src="images/book1.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
-                <span class="book-card__badge">Новинка</span>
-              </div>
-              <div class="book-card__content">
-                <h3 class="book-card__title">Тайна старого поместья</h3>
-                <p class="book-card__author">Анна Романова</p>
-                <p class="book-card__genre">Исторический роман</p>
-                <p class="book-card__description">Захватывающая история любви на фоне событий XIX века. Тайны, интриги и настоящие чувства в атмосфере старинного поместья.</p>
-                <div class="book-card__meta">
-                  <span class="book-card__price">299 ₽</span>
-                  <div class="book-card__rating">★ 4.8</div>
-                </div>
-                <button class="btn btn-primary btn--full mt-md" onclick="addToCart('book-1')">В корзину</button>
-                <a href="book.html?id=book-1" class="btn btn-secondary btn--full">Подробнее</a>
-              </div>
-            </article>
-
-            <!-- Карточка книги 2 -->
-            <article class="book-card">
-              <div class="book-card__cover">
-                <img class="book-card__cover-img" src="images/book2.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
-              </div>
-              <div class="book-card__content">
-                <h3 class="book-card__title">Сердце в огне</h3>
-                <p class="book-card__author">Елена Ветрова</p>
-                <p class="book-card__genre">Современный роман</p>
-                <p class="book-card__description">История о страсти, предательстве и искуплении. Две судьбы пересекаются в самом неожиданном месте.</p>
-                <div class="book-card__meta">
-                  <span class="book-card__price">249 ₽</span>
-                  <div class="book-card__rating">★ 4.6</div>
-                </div>
-                <button class="btn btn-primary btn--full mt-md" onclick="addToCart('book-2')">В корзину</button>
-                <a href="book.html?id=book-2" class="btn btn-secondary btn--full">Подробнее</a>
-              </div>
-            </article>
-
-            <!-- Карточка книги 3 -->
-            <article class="book-card">
-              <div class="book-card__cover">
-                <img class="book-card__cover-img" src="images/book3.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
-                <span class="book-card__badge">Хит</span>
-              </div>
-              <div class="book-card__content">
-                <h3 class="book-card__title">Зимняя сказка</h3>
-                <p class="book-card__author">Мария Снежная</p>
-                <p class="book-card__genre">Романтическая фантазия</p>
-                <p class="book-card__description">Волшебная история любви в заснеженном городе. Когда мечты становятся реальностью, а сказка оживает.</p>
-                <div class="book-card__meta">
-                  <span class="book-card__price">349 ₽</span>
-                  <div class="book-card__rating">★ 4.9</div>
-                </div>
-                <button class="btn btn-primary btn--full mt-md" onclick="addToCart('book-3')">В корзину</button>
-                <a href="book.html?id=book-3" class="btn btn-secondary btn--full">Подробнее</a>
-              </div>
-            </article>
-
-            <!-- Карточка книги 4 -->
-            <article class="book-card">
-              <div class="book-card__cover">
-                <img class="book-card__cover-img" src="images/book4.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
-              </div>
-              <div class="book-card__content">
-                <h3 class="book-card__title">Осенний вальс</h3>
-                <p class="book-card__author">Наталья Листвина</p>
-                <p class="book-card__genre">Драма</p>
-                <p class="book-card__description">Трогательная история о второй шансе найти любовь. Осень становится временем перемен и новых начинаний.</p>
-                <div class="book-card__meta">
-                  <span class="book-card__price">279 ₽</span>
-                  <div class="book-card__rating">★ 4.7</div>
-                </div>
-                <button class="btn btn-primary btn--full mt-md" onclick="addToCart('book-4')">В корзину</button>
-                <a href="book.html?id=book-4" class="btn btn-secondary btn--full">Подробнее</a>
-              </div>
-            </article>
-
-            <!-- Карточка книги 5 -->
-            <article class="book-card">
-              <div class="book-card__cover">
-                <img class="book-card__cover-img" src="images/book5.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
-                <span class="book-card__badge">Новинка</span>
-              </div>
-              <div class="book-card__content">
-                <h3 class="book-card__title">Городские истории</h3>
-                <p class="book-card__author">Ирина Городская</p>
-                <p class="book-card__genre">Современный роман</p>
-                <p class="book-card__description">Сборник коротких историй о любви в большом городе. Каждая глава — новая судьба, новые эмоции.</p>
-                <div class="book-card__meta">
-                  <span class="book-card__price">329 ₽</span>
-                  <div class="book-card__rating">★ 4.5</div>
-                </div>
-                <button class="btn btn-primary btn--full mt-md" onclick="addToCart('book-5')">В корзину</button>
-                <a href="book.html?id=book-5" class="btn btn-secondary btn--full">Подробнее</a>
-              </div>
-            </article>
-
-            <!-- Карточка книги 6 -->
-            <article class="book-card">
-              <div class="book-card__cover">
-                <img class="book-card__cover-img" src="images/book6.jpg" alt="Обложка книги" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22450%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%23EFEAE4%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%237A3B4A%22%3EОбложка книги%3C/text%3E%3C/svg%3E'">
-              </div>
-              <div class="book-card__content">
-                <h3 class="book-card__title">Признание в чувствах</h3>
-                <p class="book-card__author">Анна Романова</p>
-                <p class="book-card__genre">Романтика</p>
-                <p class="book-card__description">История о том, как важно не бояться говорить о своих чувствах. Иногда одно признание меняет всё.</p>
-                <div class="book-card__meta">
-                  <span class="book-card__price">259 ₽</span>
-                  <div class="book-card__rating">★ 4.8</div>
-                </div>
-                <button class="btn btn-primary btn--full mt-md" onclick="addToCart('book-6')">В корзину</button>
-                <a href="book.html?id=book-6" class="btn btn-secondary btn--full">Подробнее</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Подвал -->
-  <footer class="footer">
-    <div class="container footer__container">
-      <div class="footer__section">
-        <h4>Romanland</h4>
-        <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
-          Страна романов — литературное пространство для продажи романтической литературы напрямую от авторов
-        </p>
-      </div>
-      
-      <div class="footer__section">
-        <h4>Навигация</h4>
-        <ul class="footer__links">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="about.html">Об авторе</a></li>
-          <li><a href="news.html">Новости</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__section">
-        <h4>Покупателям</h4>
-        <ul class="footer__links">
-          <li><a href="support.html">Техподдержка</a></li>
-          <li><a href="how-to-buy.html">Как купить</a></li>
-          <li><a href="formats.html">Форматы файлов</a></li>
-          <li><a href="return.html">Возврат</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__section">
-        <h4>Юридическая информация</h4>
-        <ul class="footer__links">
-          <li><a href="privacy.html">Политика конфиденциальности</a></li>
-          <li><a href="offer.html">Публичная оферта</a></li>
-          <li><a href="terms.html">Условия использования</a></li>
-          <li><a href="details.html">Реквизиты</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="container footer__bottom">
-      <p>&copy; 2024 Romanland. Все права защищены.</p>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="js/main.js"></script>
+renderCatalog();
+</script>
 </body>
 </html>
