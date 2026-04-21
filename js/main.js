@@ -34,21 +34,52 @@ if (mobileToggle && headerNav) {
   });
 }
 
+function getCart() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem('romanland_cart') || '[]');
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveCart(cart) {
+  localStorage.setItem('romanland_cart', JSON.stringify(cart));
+}
+
+function showToast(message) {
+  const toast = document.createElement('div');
+  toast.className = 'ui-toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => toast.classList.add('ui-toast--show'));
+  setTimeout(() => {
+    toast.classList.remove('ui-toast--show');
+    setTimeout(() => toast.remove(), 250);
+  }, 1800);
+}
+
 // Add to Cart function
 function addToCart(bookId) {
   const book = getBookById(bookId);
   if (!book) return;
-  
-  const cart = JSON.parse(localStorage.getItem('romanland_cart') || '[]');
-  cart.push({
-    id: book.id,
-    title: book.title,
-    author: book.author,
-    price: book.price,
-    image: book.image
-  });
-  localStorage.setItem('romanland_cart', JSON.stringify(cart));
-  alert('Книга добавлена в корзину!');
+
+  const cart = getCart();
+  const existing = cart.find(item => item.id === book.id);
+  if (existing) {
+    existing.quantity = (existing.quantity || 1) + 1;
+  } else {
+    cart.push({
+      id: book.id,
+      title: book.title,
+      author: book.author,
+      price: book.price,
+      image: book.image,
+      quantity: 1
+    });
+  }
+  saveCart(cart);
+  showToast(`«${book.title}» добавлена в корзину`);
 }
 
 // Smooth scroll for anchor links
@@ -69,3 +100,21 @@ document.querySelectorAll('.faq-item__question').forEach(question => {
     item.classList.toggle('faq-item--active');
   });
 });
+
+// Subtle reveal animation
+const revealElements = document.querySelectorAll('.section, .feature-card, .news-card');
+if ('IntersectionObserver' in window && revealElements.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealElements.forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+}
